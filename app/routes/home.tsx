@@ -11,8 +11,8 @@ import HomeSection from "~/components/HomeSection";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "OpenTech" },
-    { name: "description", content: "Open Source Innovation" },
+    { title: "Sindology" },
+    { name: "description", content: "Digital product services" },
   ];
 }
 

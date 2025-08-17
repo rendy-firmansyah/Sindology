@@ -61,7 +61,7 @@ const projects = [
       "Website survey on disaster mitigation handling in Jember from the students program of Muhammadiyah University Jember",
     license: "Sindology",
     link: "https://desa-siaga-app.vercel.app/",
-    image: "/public/assets/project/web-mitigasi.png",
+    image: "/assets/project/web-mitigasi.png",
     status: ["Active"],
     tech: ["Javascript", "Next.js", "Express.js", "PostgreeSQL"],
     updated: "3 week ago",
