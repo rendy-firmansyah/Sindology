@@ -20,7 +20,7 @@ const teamMembers: TeamMember[] = [
     link_linkedin: "https://www.linkedin.com/in/rendy-firmansyah28/",
     link_web: "https://rendysite.vercel.app/",
     description:
-      "Ex-Microsoft architect specializing in distributed systems and cloud infrastructure.",
+      "A graduate of Jember University specializing in Website Development and Machine Learning.",
     image: "/assets/rendy.jpg",
   },
   {
@@ -30,7 +30,7 @@ const teamMembers: TeamMember[] = [
     link_linkedin: null,
     link_web: null,
     description:
-      "Ex-Microsoft architect specializing in distributed systems and cloud infrastructure.",
+      "Students of Jember University who specialize in Website Development and IoT",
     image: "/assets/risky2.jpeg",
   },
   {
@@ -40,27 +40,27 @@ const teamMembers: TeamMember[] = [
     link_linkedin: null,
     link_web: null,
     description:
-      "Community builder with experience at GitHub and Stack Overflow, passionate about developer relations.",
+      "Students of Jember University who specialize in Website Development and Graphic Design.",
     image: "https://randomuser.me/api/portraits/women/65.jpg",
   },
   {
     name: "Ahmad Yoga",
-    role: "Backend Developer/IoT",
+    role: "Backend/IoT",
     link_github: null,
     link_linkedin: null,
     link_web: null,
     description:
-      "Full-stack engineer and open source maintainer with contributions to major projects like React and Node.js.",
+      "Students of Jember University who specialize in Website Development and IoT",
     image: "/assets/yoga.jpeg",
   },
   {
     name: "Ikbar Saif",
-    role: "Frontend/Muadzin",
+    role: "Frontend",
     link_github: null,
     link_linkedin: null,
     link_web: null,
     description:
-      "Full-stack engineer and open source maintainer with contributions to major projects like React and Node.js.",
+      "Students of Jember University who specialize in Website Development",
     image: "/assets/ikbar.jpeg",
   },
   {
@@ -70,7 +70,7 @@ const teamMembers: TeamMember[] = [
     link_linkedin: null,
     link_web: null,
     description:
-      "Full-stack engineer and open source maintainer with contributions to major projects like React and Node.js.",
+      "University of Jember students specializing in Game Development",
     image: "/assets/amroy.jpeg",
   },
 ];
