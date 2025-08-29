@@ -47,15 +47,26 @@ export default function ChooseMe() {
       <div className="max-w-6xl mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16">
-          <span className="inline-block px-4 py-1 mb-6 text-sm font-medium text-gray-600 bg-gray-100 rounded-full dark:bg-gray-800 dark:text-gray-300">
+          <span
+            className="inline-block px-4 py-1 mb-6 text-sm font-medium text-gray-600 bg-gray-100 rounded-full dark:bg-gray-800 dark:text-gray-300"
+            data-aos="fade-down"
+          >
             Why Choose Sindology
           </span>
-          <h2 className="text-4xl md:text-5xl font-extrabold mb-6">
+          <h2
+            className="text-4xl md:text-5xl font-extrabold mb-6"
+            data-aos="fade-left"
+          >
             Empowering Innovation Through
             <br />
-            <span className="text-[#8c3edb]">Our Services</span>
+            <span className="text-[#8c3edb]" data-aos="fade-right">
+              Our Services
+            </span>
           </h2>
-          <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-4">
+          <p
+            className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-4"
+            data-aos="fade-up"
+          >
             Let’s join the ever-evolving ecosystem, where technology merges with
             community. Together with teams and partners, you can build, learn,
             and innovate to create real solutions.

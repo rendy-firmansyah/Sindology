@@ -112,14 +112,25 @@ export default function ServiceSection() {
       <div className="max-w-6xl px-4 mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
-          <span className="inline-block px-4 py-1 mb-6 text-sm font-medium text-gray-600 bg-gray-100 rounded-full dark:bg-gray-800 dark:text-gray-300">
+          <span
+            className="inline-block px-4 py-1 mb-6 text-sm font-medium text-gray-600 bg-gray-100 rounded-full dark:bg-gray-800 dark:text-gray-300"
+            data-aos="fade-down"
+          >
             Our Service
           </span>
-          <h2 className="text-4xl md:text-5xl font-extrabold mb-6">
+          <h2
+            className="text-4xl md:text-5xl font-extrabold mb-6"
+            data-aos="fade-left"
+          >
             Professional <br />
-            <span className="text-[#8c3edb]">Technology Service</span>
+            <span className="text-[#8c3edb]" data-aos="right">
+              Technology Service
+            </span>
           </h2>
-          <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-12">
+          <p
+            className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-12"
+            data-aos="fade-up"
+          >
             From custom development to technical support, we provide
             comprehensive technology services to help your business grow and
             succeed in the digital world.

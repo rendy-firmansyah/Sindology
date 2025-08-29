@@ -83,18 +83,29 @@ export default function AboutSection() {
     >
       <div className="max-w-5xl mx-auto px-4 text-center">
         {/* Small label */}
-        <span className="inline-block px-4 py-1 mb-6 text-sm font-medium text-gray-600 bg-gray-100 rounded-full dark:bg-gray-800 dark:text-gray-300">
+        <span
+          className="inline-block px-4 py-1 mb-6 text-sm font-medium text-gray-600 bg-gray-100 rounded-full dark:bg-gray-800 dark:text-gray-300"
+          data-aos="fade-down"
+        >
           About Sindology
         </span>
 
         {/* Main heading */}
-        <h2 className="text-4xl md:text-5xl font-extrabold mb-6">
+        <h2
+          className="text-4xl md:text-5xl font-extrabold mb-6"
+          data-aos="fade-right"
+        >
           Building Tomorrow's <br />
-          <span className="text-[#602c94]">Technology Today</span>
+          <span className="text-[#602c94]" data-aos="fade-left">
+            Technology Today
+          </span>
         </h2>
 
         {/* Description */}
-        <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-12">
+        <p
+          className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-12"
+          data-aos="fade-up"
+        >
           Sindology is a digital innovation hub that helps transform ideas into
           impactful solutions. We provide services in website development,
           mobile apps, IoT, machine learning, game development, and creative
@@ -105,7 +116,10 @@ export default function AboutSection() {
         {/* Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Mission */}
-          <div className="p-6 bg-white dark:bg-gray-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 text-left">
+          <div
+            className="p-6 bg-white dark:bg-gray-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 text-left"
+            data-aos="zoom-in-right"
+          >
             <div className="flex items-center mb-4">
               <div className="w-10 h-10 rounded-lg bg-[#dfbfff] flex items-center justify-center">
                 <Target size={26} className="text-[#8c3edb]" />
@@ -121,7 +135,10 @@ export default function AboutSection() {
           </div>
 
           {/* Vision */}
-          <div className="p-6 bg-white dark:bg-gray-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 text-left">
+          <div
+            className="p-6 bg-white dark:bg-gray-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 text-left"
+            data-aos="zoom-in-left"
+          >
             <div className="flex items-center mb-4">
               <div className="w-10 h-10 rounded-lg bg-[#dfbfff] flex items-center justify-center">
                 <Eye size={26} className="text-[#8c3edb]" />
@@ -138,15 +155,23 @@ export default function AboutSection() {
 
         {/* Core Values */}
         <div className="mt-10">
-          <h3 className="text-xl font-bold mb-3">Our Core Values</h3>
-          <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-12">
+          <h3 className="text-xl font-bold mb-3" data-aos="fade-up">
+            Our Core Values
+          </h3>
+          <p
+            className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-12"
+            data-aos="fade-up"
+          >
             The principles that guide every decision we make and every project
             we build.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {/* Innovation First */}
-            <div className="p-6 bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 text-center">
+            <div
+              className="p-6 bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 text-center"
+              data-aos="zoom-in"
+            >
               <div className="w-8 h-8 mx-auto mb-4 rounded-lg bg-[#dfbfff] flex items-center justify-center">
                 <Target size={20} className="text-[#8c3edb]" />
               </div>
@@ -158,7 +183,10 @@ export default function AboutSection() {
             </div>
 
             {/* Community Driven */}
-            <div className="p-6 bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 text-center">
+            <div
+              className="p-6 bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 text-center"
+              data-aos="zoom-in"
+            >
               <div className="w-8 h-8 mx-auto mb-4 rounded-lg bg-[#dfbfff] flex items-center justify-center">
                 <Users size={20} className="text-[#8c3edb]" />
               </div>
@@ -170,7 +198,10 @@ export default function AboutSection() {
             </div>
 
             {/* Open & Transparent */}
-            <div className="p-6 bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 text-center">
+            <div
+              className="p-6 bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 text-center"
+              data-aos="zoom-in"
+            >
               <div className="w-8 h-8 mx-auto mb-4 rounded-lg bg-[#dfbfff] flex items-center justify-center">
                 <Heart size={20} className="text-[#8c3edb]" />
               </div>
@@ -184,7 +215,10 @@ export default function AboutSection() {
             </div>
 
             {/* Quality Excellence */}
-            <div className="p-6 bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 text-center">
+            <div
+              className="p-6 bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 text-center"
+              data-aos="zoom-in"
+            >
               <div className="w-8 h-8 mx-auto mb-4 rounded-lg bg-[#dfbfff] flex items-center justify-center">
                 <Award size={20} className="text-[#8c3edb]" />
               </div>
@@ -197,14 +231,23 @@ export default function AboutSection() {
           </div>
         </div>
         {/*  */}
-        <h2 className="text-3xl font-bold mt-14 text-gray-900 dark:text-white">
+        <h2
+          className="text-3xl font-bold mt-14 text-gray-900 dark:text-white"
+          data-aos="fade-down"
+        >
           Meet Our Team
         </h2>
-        <p className="mt-2 text-gray-600 dark:text-gray-400">
+        <p
+          className="mt-2 text-gray-600 dark:text-gray-400"
+          data-aos="fade-down"
+        >
           An enthusiastic individual who drives innovation and builds Sindology.
         </p>
 
-        <div className="mt-10 flex flex-wrap justify-center gap-6">
+        <div
+          className="mt-10 flex flex-wrap justify-center gap-6"
+          data-aos="zoom-out-down"
+        >
           {teamMembers.map((member, index) => (
             <div
               key={index}

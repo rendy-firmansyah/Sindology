@@ -96,18 +96,29 @@ export default function ProjectSection() {
     >
       <div className="max-w-5xl mx-auto px-4 text-center">
         {/* Small label */}
-        <span className="inline-block px-4 py-1 mb-6 text-sm font-medium text-gray-600 bg-[#e5d4f5] rounded-full dark:bg-gray-800 dark:text-gray-300">
+        <span
+          className="inline-block px-4 py-1 mb-6 text-sm font-medium text-gray-600 bg-[#e5d4f5] rounded-full dark:bg-gray-800 dark:text-gray-300"
+          data-aos="fade-down"
+        >
           Various projects of ours
         </span>
 
         {/* Main heading */}
-        <h2 className="text-4xl md:text-5xl font-extrabold mb-6">
+        <h2
+          className="text-4xl md:text-5xl font-extrabold mb-6"
+          data-aos="fade-right"
+        >
           Innovative Projects <br />
-          <span className="text-[#602c94]">Built by Community</span>
+          <span className="text-[#602c94]" data-aos="fade-left">
+            Built by Community
+          </span>
         </h2>
 
         {/* Description */}
-        <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-12">
+        <p
+          className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-12"
+          data-aos="fade-up"
+        >
           Explore the collection of projects that we have created and developed,
           which includes websites, mobile, IoT, machine learning, games, and
           design.
@@ -116,19 +127,31 @@ export default function ProjectSection() {
 
       {/* Statistik */}
       <div className="flex flex-wrap justify-center items-center my-10 gap-8">
-        <div className="py-4 px-16 bg-white rounded-xl border border-gray-200 text-center">
+        <div
+          className="py-4 px-16 bg-white rounded-xl border border-gray-200 text-center"
+          data-aos="fade-right"
+        >
           <h1 className="text-[#602c94] text-xl font-bold">50+</h1>
           <span className="text-xs">Active Projects</span>
         </div>
-        <div className="py-4 px-16 bg-white rounded-xl border border-gray-200 text-center">
+        <div
+          className="py-4 px-16 bg-white rounded-xl border border-gray-200 text-center"
+          data-aos="fade-up"
+        >
           <h1 className="text-[#602c94] text-xl font-bold">12k+</h1>
           <span className="text-xs">Github Stars</span>
         </div>
-        <div className="py-4 px-16 bg-white rounded-xl border border-gray-200 text-center">
+        <div
+          className="py-4 px-16 bg-white rounded-xl border border-gray-200 text-center"
+          data-aos="fade-down"
+        >
           <h1 className="text-[#602c94] text-xl font-bold">2.1k+</h1>
           <span className="text-xs">Contributors</span>
         </div>
-        <div className="py-4 px-16 bg-white rounded-xl border border-gray-200 text-center">
+        <div
+          className="py-4 px-16 bg-white rounded-xl border border-gray-200 text-center"
+          data-aos="fade-left"
+        >
           <h1 className="text-[#602c94] text-xl font-bold">15+</h1>
           <span className="text-xs">Categories</span>
         </div>

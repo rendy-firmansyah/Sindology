@@ -11,10 +11,16 @@ export default function ContactSection() {
       <div className="max-w-6xl mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16">
-          <span className="inline-block px-4 py-1 mb-6 text-sm font-medium text-gray-600 bg-gray-100 rounded-full dark:bg-gray-800 dark:text-gray-300">
+          <span
+            className="inline-block px-4 py-1 mb-6 text-sm font-medium text-gray-600 bg-gray-100 rounded-full dark:bg-gray-800 dark:text-gray-300"
+            data-aos="fade-down"
+          >
             Contact Information
           </span>
-          <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-12">
+          <p
+            className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-12"
+            data-aos="fade-up"
+          >
             Ready to start your next project? We'd love to hear from you. Send
             us a message and we'll respond as soon as possible.
           </p>
