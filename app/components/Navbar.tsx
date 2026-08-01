@@ -1,6 +1,6 @@
-import { Link } from "react-router";
+import { Link } from "react-router"; // atau "react-router-dom" tergantung versimu
 import { useState, useEffect } from "react";
-import { Menu, X, PhoneIcon } from "lucide-react";
+import { Menu, X, PhoneIcon, Sun, Moon } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   FaInstagram,
@@ -13,6 +13,26 @@ const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [showTopBar, setShowTopBar] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  
+  // 🔹 State untuk Dark Mode
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  // 🔹 Cek status dark mode saat pertama kali render
+  useEffect(() => {
+    if (document.documentElement.classList.contains("dark")) {
+      setIsDarkMode(true);
+    }
+  }, []);
+
+  // 🔹 Fungsi untuk toggle Dark Mode
+  const toggleDarkMode = () => {
+    setIsDarkMode(!isDarkMode);
+    if (!isDarkMode) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  };
 
   const handleClickMobile = (
     e: React.MouseEvent<HTMLAnchorElement>,
@@ -23,7 +43,7 @@ const Navbar: React.FC = () => {
       behavior: "smooth",
       block: "start",
     });
-    setIsOpen(false); // tutup navbar setelah klik
+    setIsOpen(false);
   };
 
   // 🔹 Handle scroll untuk show/hide top bar
@@ -32,10 +52,8 @@ const Navbar: React.FC = () => {
       const currentScrollY = window.scrollY;
 
       if (currentScrollY > lastScrollY && currentScrollY > 50) {
-        // Scroll ke bawah → hide top bar
         setShowTopBar(false);
       } else {
-        // Scroll ke atas → show top bar
         setShowTopBar(true);
       }
 
@@ -48,7 +66,7 @@ const Navbar: React.FC = () => {
 
   return (
     <>
-      {/* 🔹 Top Info Bar (animasi muncul/hilang) */}
+      {/* 🔹 Top Info Bar */}
       <AnimatePresence>
         {showTopBar && (
           <motion.div
@@ -67,19 +85,19 @@ const Navbar: React.FC = () => {
                 </span>
               </div>
               <div className="flex items-center gap-3 cursor-pointer">
-                <div className="flex items-center gap-1 text-xs">
+                <div className="flex items-center gap-1 text-xs hover:text-gray-300">
                   <FaInstagram size={14} />
                   <span className="hidden sm:inline">Instagram</span>
                 </div>
-                <div className="flex items-center gap-1 text-xs">
+                <div className="flex items-center gap-1 text-xs hover:text-gray-300">
                   <FaLinkedin size={14} />
                   <span className="hidden sm:inline">Linkedin</span>
                 </div>
-                <div className="flex items-center gap-1 text-xs">
+                <div className="flex items-center gap-1 text-xs hover:text-gray-300">
                   <FaFacebook size={14} />
                   <span className="hidden sm:inline">Facebook</span>
                 </div>
-                <div className="flex items-center gap-1 text-xs">
+                <div className="flex items-center gap-1 text-xs hover:text-gray-300">
                   <FaEnvelope size={14} />
                   <span className="hidden sm:inline">Email</span>
                 </div>
@@ -89,11 +107,11 @@ const Navbar: React.FC = () => {
         )}
       </AnimatePresence>
 
-      {/* 🔹 Navbar (posisi adaptif) */}
+      {/* 🔹 Navbar (posisi adaptif & support dark mode) */}
       <nav
-        className={`fixed w-full bg-white shadow-md z-40 transition-all duration-300 ${
+        className={`fixed w-full shadow-md z-40 transition-all duration-300 ${
           showTopBar ? "top-6" : "top-0"
-        }`}
+        } bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
@@ -108,76 +126,36 @@ const Navbar: React.FC = () => {
             </div>
 
             {/* Desktop Menu */}
-            <div className="hidden md:flex gap-6">
-              <Link
-                to="/#home"
-                className="hover:text-[#602c94]"
-                onClick={(e) => {
-                  e.preventDefault();
-                  document.querySelector("#home")?.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start",
-                  });
-                }}
-              >
-                Home
-              </Link>
-              <Link
-                to="/#about"
-                className="hover:text-[#602c94]"
-                onClick={(e) => {
-                  e.preventDefault();
-                  document.querySelector("#about")?.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start",
-                  });
-                }}
-              >
-                About
-              </Link>
-              <Link
-                to="/#project"
-                className="hover:text-[#602c94]"
-                onClick={(e) => {
-                  e.preventDefault();
-                  document.querySelector("#project")?.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start",
-                  });
-                }}
-              >
-                Projects
-              </Link>
-              <Link
-                to="/#services"
-                className="hover:text-[#602c94]"
-                onClick={(e) => {
-                  e.preventDefault();
-                  document.querySelector("#services")?.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start",
-                  });
-                }}
-              >
-                Services
-              </Link>
-              <Link
-                to="/#contact"
-                className="hover:text-[#602c94]"
-                onClick={(e) => {
-                  e.preventDefault();
-                  document.querySelector("#contact")?.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start",
-                  });
-                }}
-              >
-                Contact
-              </Link>
+            <div className="hidden md:flex gap-6 items-center">
+              {['Home', 'About', 'Projects', 'Services', 'Contact'].map((item) => (
+                <Link
+                  key={item}
+                  to={`/#${item.toLowerCase()}`}
+                  className="hover:text-[#602c94] dark:hover:text-[#a874db] transition-colors"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document.querySelector(`#${item.toLowerCase()}`)?.scrollIntoView({
+                      behavior: "smooth",
+                      block: "start",
+                    });
+                  }}
+                >
+                  {item}
+                </Link>
+              ))}
             </div>
 
-            {/* Buttons (Desktop) */}
-            <div className="hidden md:flex gap-4">
+            {/* Buttons & Toggle (Desktop) */}
+            <div className="hidden md:flex gap-4 items-center">
+              {/* Toggle Dark Mode Button */}
+              <button
+                onClick={toggleDarkMode}
+                className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+                aria-label="Toggle Dark Mode"
+              >
+                {isDarkMode ? <Sun size={20} className="text-yellow-400" /> : <Moon size={20} />}
+              </button>
+
               <a
                 href="https://wa.me/6285648408330"
                 className="px-4 py-2 bg-[#602c94] transition-all ease-linear text-white rounded-lg hover:bg-[#8c3edb]"
@@ -186,8 +164,15 @@ const Navbar: React.FC = () => {
               </a>
             </div>
 
-            {/* Mobile Hamburger */}
-            <div className="md:hidden flex items-center">
+            {/* Mobile Actions (Toggle + Hamburger) */}
+            <div className="md:hidden flex items-center gap-3">
+              <button
+                onClick={toggleDarkMode}
+                className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+              >
+                {isDarkMode ? <Sun size={20} className="text-yellow-400" /> : <Moon size={20} />}
+              </button>
+              
               <button onClick={() => setIsOpen(!isOpen)}>
                 {isOpen ? <X size={28} /> : <Menu size={28} />}
               </button>
@@ -204,48 +189,23 @@ const Navbar: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.3, ease: "easeInOut" }}
-              className="md:hidden bg-white shadow-md px-6 py-4 space-y-4"
+              className="md:hidden bg-white dark:bg-gray-900 shadow-md px-6 py-4 space-y-4"
             >
-              <Link
-                to="/#home"
-                className="block hover:text-[#602c94]"
-                onClick={(e) => handleClickMobile(e, "#home")}
-              >
-                Home
-              </Link>
-              <Link
-                to="/#about"
-                className="block hover:text-[#602c94]"
-                onClick={(e) => handleClickMobile(e, "#about")}
-              >
-                About
-              </Link>
-              <Link
-                to="/#project"
-                className="block hover:text-[#602c94]"
-                onClick={(e) => handleClickMobile(e, "#project")}
-              >
-                Projects
-              </Link>
-              <Link
-                to="/#services"
-                className="block hover:text-[#602c94]"
-                onClick={(e) => handleClickMobile(e, "#services")}
-              >
-                Services
-              </Link>
-              <Link
-                to="/#contact"
-                className="block hover:text-[#8c3edb]"
-                onClick={(e) => handleClickMobile(e, "#contact")}
-              >
-                Contact
-              </Link>
+              {['Home', 'About', 'Projects', 'Services', 'Contact'].map((item) => (
+                <Link
+                  key={item}
+                  to={`/#${item.toLowerCase()}`}
+                  className="block hover:text-[#602c94] dark:hover:text-[#a874db] transition-colors"
+                  onClick={(e) => handleClickMobile(e, `#${item.toLowerCase()}`)}
+                >
+                  {item}
+                </Link>
+              ))}
 
-              <div className="flex flex-col gap-2 pt-4 border-t">
+              <div className="flex flex-col gap-2 pt-4 border-t dark:border-gray-700">
                 <a
                   href="https://wa.me/6285648408330"
-                  className="px-4 py-2 bg-[#602c94] text-white rounded-lg hover:bg-[#8c3edb]"
+                  className="px-4 py-2 bg-[#602c94] text-center text-white rounded-lg hover:bg-[#8c3edb]"
                 >
                   Get Started
                 </a>

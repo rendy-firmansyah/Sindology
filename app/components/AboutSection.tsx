@@ -4,7 +4,6 @@ import { FaLinkedin, FaGithub, FaEnvelope, FaLink } from "react-icons/fa";
 
 type TeamMember = {
   name: string;
-  role: string;
   link_github: string | null;
   link_linkedin: string | null;
   link_web: string | null;
@@ -15,63 +14,66 @@ type TeamMember = {
 const teamMembers: TeamMember[] = [
   {
     name: "Rendy Firmansyah",
-    role: "Frontend/ML",
-    link_github: "https://github.com/rendy-firmansyah",
-    link_linkedin: "https://www.linkedin.com/in/rendy-firmansyah28/",
-    link_web: "https://rendysite.vercel.app/",
+    link_github: "github.com/rendy-firmansyah",
+    link_linkedin: "https://www.linkedin.com/in/rendy-firmansyah28",
+    link_web: "rendysite.vercel.app",
     description:
       "A graduate of Jember University specializing in Website Development and Machine Learning.",
-    image: "/assets/rendy.jpg",
+    image: "/assets/rendy.png",
   },
   {
     name: "Rizky Febianto",
-    role: "Frontend/IoT",
     link_github: null,
     link_linkedin: null,
     link_web: null,
     description:
       "Students of Jember University who specialize in Website Development and IoT",
-    image: "/assets/risky2.jpeg",
+    image: "/assets/risky.png",
   },
   {
     name: "Suhermanto",
-    role: "Frontend/Graphic Design",
     link_github: null,
     link_linkedin: null,
     link_web: null,
     description:
       "Students of Jember University who specialize in Website Development and Graphic Design.",
-    image: "https://randomuser.me/api/portraits/women/65.jpg",
+    image: "/assets/antok.png",
   },
   {
     name: "Ahmad Yoga",
-    role: "Backend/IoT",
-    link_github: null,
-    link_linkedin: null,
-    link_web: null,
+    link_github: "https://github.com/yoga838",
+    link_linkedin: "https://www.linkedin.com/in/bagus-prayoga",
+    link_web: "reckdev.vercel.app",
     description:
       "Students of Jember University who specialize in Website Development and IoT",
-    image: "/assets/yoga.jpeg",
+    image: "/assets/yoga.png",
   },
   {
     name: "Ikbar Saif",
-    role: "Frontend",
-    link_github: null,
-    link_linkedin: null,
-    link_web: null,
+    link_github: "https://github.com/Ikbarsf",
+    link_linkedin: "https://www.linkedin.com/in/ikbar-saif-fadilah-0a6215220",
+    link_web: "https://ikbarsaif.netlify.app",
     description:
       "Students of Jember University who specialize in Website Development",
-    image: "/assets/ikbar.jpeg",
+    image: "/assets/ikbar.png",
   },
   {
     name: "Fakhruddin Amri",
-    role: "Game Developer",
     link_github: null,
     link_linkedin: null,
-    link_web: null,
+    link_web: "https://canva.link/dzh4mgttbgcoasb",
     description:
       "University of Jember students specializing in Game Development",
-    image: "/assets/amroy.jpeg",
+    image: "/assets/amri.png",
+  },
+  {
+    name: "Gigih Fajrul",
+    link_github: null,
+    link_linkedin: "https://www.linkedin.com/in/gigihfrizk990",
+    link_web: null,
+    description:
+      "University of Jember students specializing in UI/UX Design and Editing",
+    image: "/assets/gigih.png",
   },
 ];
 
