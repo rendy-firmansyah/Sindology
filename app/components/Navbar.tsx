@@ -14,23 +14,37 @@ const Navbar: React.FC = () => {
   const [showTopBar, setShowTopBar] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   
-  // 🔹 State untuk Dark Mode
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  // 🔹 State default diubah menjadi true (Dark Mode)
+  const [isDarkMode, setIsDarkMode] = useState(true);
 
-  // 🔹 Cek status dark mode saat pertama kali render
+  // 🔹 Cek preferensi user saat pertama kali web dimuat
   useEffect(() => {
-    if (document.documentElement.classList.contains("dark")) {
+    // Mengecek apakah sebelumnya user pernah memilih tema terang
+    const savedTheme = localStorage.getItem("theme");
+
+    if (savedTheme === "light") {
+      setIsDarkMode(false);
+      document.documentElement.classList.remove("dark");
+    } else {
+      // Jika baru pertama kali buka (belum ada data) atau tersimpan 'dark', paksa mode gelap
       setIsDarkMode(true);
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("theme", "dark");
     }
   }, []);
 
-  // 🔹 Fungsi untuk toggle Dark Mode
+  // 🔹 Fungsi untuk toggle Dark Mode & simpan ke Local Storage
   const toggleDarkMode = () => {
-    setIsDarkMode(!isDarkMode);
-    if (!isDarkMode) {
-      document.documentElement.classList.add("dark");
-    } else {
+    if (isDarkMode) {
+      // Berubah ke Light Mode
       document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+      setIsDarkMode(false);
+    } else {
+      // Berubah ke Dark Mode
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+      setIsDarkMode(true);
     }
   };
 

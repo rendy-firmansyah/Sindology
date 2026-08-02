@@ -1,9 +1,9 @@
 import { Eye, Target, Users, Heart, Award } from "lucide-react";
-
-import { FaLinkedin, FaGithub, FaEnvelope, FaLink } from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaLink } from "react-icons/fa";
 
 type TeamMember = {
   name: string;
+  role?: string; // 🔹 Ditambahkan agar {member.role} tidak error di TS
   link_github: string | null;
   link_linkedin: string | null;
   link_web: string | null;
@@ -14,6 +14,7 @@ type TeamMember = {
 const teamMembers: TeamMember[] = [
   {
     name: "Rendy Firmansyah",
+    role: "Website & ML", // Contoh penambahan role
     link_github: "github.com/rendy-firmansyah",
     link_linkedin: "https://www.linkedin.com/in/rendy-firmansyah28",
     link_web: "rendysite.vercel.app",
@@ -23,6 +24,7 @@ const teamMembers: TeamMember[] = [
   },
   {
     name: "Rizky Febianto",
+    role: "Website & IoT",
     link_github: null,
     link_linkedin: null,
     link_web: null,
@@ -32,6 +34,7 @@ const teamMembers: TeamMember[] = [
   },
   {
     name: "Suhermanto",
+    role: "Website & Design",
     link_github: null,
     link_linkedin: null,
     link_web: null,
@@ -41,6 +44,7 @@ const teamMembers: TeamMember[] = [
   },
   {
     name: "Ahmad Yoga",
+    role: "Website & IoT",
     link_github: "https://github.com/yoga838",
     link_linkedin: "https://www.linkedin.com/in/bagus-prayoga",
     link_web: "reckdev.vercel.app",
@@ -50,6 +54,7 @@ const teamMembers: TeamMember[] = [
   },
   {
     name: "Ikbar Saif",
+    role: "Website Dev",
     link_github: "https://github.com/Ikbarsf",
     link_linkedin: "https://www.linkedin.com/in/ikbar-saif-fadilah-0a6215220",
     link_web: "https://ikbarsaif.netlify.app",
@@ -59,6 +64,7 @@ const teamMembers: TeamMember[] = [
   },
   {
     name: "Fakhruddin Amri",
+    role: "Game Dev",
     link_github: null,
     link_linkedin: null,
     link_web: "https://canva.link/dzh4mgttbgcoasb",
@@ -68,6 +74,7 @@ const teamMembers: TeamMember[] = [
   },
   {
     name: "Gigih Fajrul",
+    role: "UI/UX Design",
     link_github: null,
     link_linkedin: "https://www.linkedin.com/in/gigihfrizk990",
     link_web: null,
@@ -81,7 +88,7 @@ export default function AboutSection() {
   return (
     <section
       id="about"
-      className="py-20 bg-white dark:bg-gray-950 scroll-mt-20"
+      className="py-20 bg-white dark:bg-gray-950 scroll-mt-20 transition-colors duration-300"
     >
       <div className="max-w-5xl mx-auto px-4 text-center">
         {/* Small label */}
@@ -93,12 +100,14 @@ export default function AboutSection() {
         </span>
 
         {/* Main heading */}
+        {/* 🔹 Ditambahkan: text-gray-900 dark:text-white */}
         <h2
-          className="text-4xl md:text-5xl font-extrabold mb-6"
+          className="text-4xl md:text-5xl font-extrabold mb-6 text-gray-900 dark:text-white"
           data-aos="fade-right"
         >
           Building Tomorrow's <br />
-          <span className="text-[#602c94]" data-aos="fade-left">
+          {/* 🔹 Ditambahkan: dark:text-[#a874db] agar ungu terlihat terang di mode gelap */}
+          <span className="text-[#602c94] dark:text-[#a874db]" data-aos="fade-left">
             Technology Today
           </span>
         </h2>
@@ -123,10 +132,12 @@ export default function AboutSection() {
             data-aos="zoom-in-right"
           >
             <div className="flex items-center mb-4">
-              <div className="w-10 h-10 rounded-lg bg-[#dfbfff] flex items-center justify-center">
-                <Target size={26} className="text-[#8c3edb]" />
+              {/* 🔹 Diubah bg agar menyatu saat dark mode */}
+              <div className="w-10 h-10 rounded-lg bg-[#dfbfff] dark:bg-[#3d1961] flex items-center justify-center">
+                <Target size={26} className="text-[#8c3edb] dark:text-[#c48dff]" />
               </div>
-              <h3 className="ml-3 text-lg font-bold">Our Mission</h3>
+              {/* 🔹 Ditambahkan text-gray-900 dark:text-white */}
+              <h3 className="ml-3 text-lg font-bold text-gray-900 dark:text-white">Our Mission</h3>
             </div>
             <p className="text-gray-600 dark:text-gray-400">
               To empower businesses and individuals by providing digital
@@ -142,10 +153,10 @@ export default function AboutSection() {
             data-aos="zoom-in-left"
           >
             <div className="flex items-center mb-4">
-              <div className="w-10 h-10 rounded-lg bg-[#dfbfff] flex items-center justify-center">
-                <Eye size={26} className="text-[#8c3edb]" />
+              <div className="w-10 h-10 rounded-lg bg-[#dfbfff] dark:bg-[#3d1961] flex items-center justify-center">
+                <Eye size={26} className="text-[#8c3edb] dark:text-[#c48dff]" />
               </div>
-              <h3 className="ml-3 text-lg font-bold">Our Vision</h3>
+              <h3 className="ml-3 text-lg font-bold text-gray-900 dark:text-white">Our Vision</h3>
             </div>
             <p className="text-gray-600 dark:text-gray-400">
               A future where digital transformation is accessible to everyone,
@@ -157,7 +168,7 @@ export default function AboutSection() {
 
         {/* Core Values */}
         <div className="mt-10">
-          <h3 className="text-xl font-bold mb-3" data-aos="fade-up">
+          <h3 className="text-xl font-bold mb-3 text-gray-900 dark:text-white" data-aos="fade-up">
             Our Core Values
           </h3>
           <p
@@ -174,40 +185,40 @@ export default function AboutSection() {
               className="p-6 bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 text-center"
               data-aos="zoom-in"
             >
-              <div className="w-8 h-8 mx-auto mb-4 rounded-lg bg-[#dfbfff] flex items-center justify-center">
-                <Target size={20} className="text-[#8c3edb]" />
+              <div className="w-8 h-8 mx-auto mb-4 rounded-lg bg-[#dfbfff] dark:bg-[#3d1961] flex items-center justify-center">
+                <Target size={20} className="text-[#8c3edb] dark:text-[#c48dff]" />
               </div>
-              <h3 className="font-semibold mb-2">Innovation First</h3>
+              <h3 className="font-semibold mb-2 text-gray-900 dark:text-white">Innovation First</h3>
               <p className="text-gray-600 dark:text-gray-400 text-xs">
                 We embrace creativity and the latest technologies to deliver
                 impactful digital solutions.
               </p>
             </div>
 
-            {/* Community Driven */}
+            {/* Client-Centered */}
             <div
               className="p-6 bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 text-center"
               data-aos="zoom-in"
             >
-              <div className="w-8 h-8 mx-auto mb-4 rounded-lg bg-[#dfbfff] flex items-center justify-center">
-                <Users size={20} className="text-[#8c3edb]" />
+              <div className="w-8 h-8 mx-auto mb-4 rounded-lg bg-[#dfbfff] dark:bg-[#3d1961] flex items-center justify-center">
+                <Users size={20} className="text-[#8c3edb] dark:text-[#c48dff]" />
               </div>
-              <h3 className="font-semibold mb-2">Client-Centered</h3>
+              <h3 className="font-semibold mb-2 text-gray-900 dark:text-white">Client-Centered</h3>
               <p className="text-gray-600 dark:text-gray-400 text-xs">
                 Every project starts with understanding client needs, ensuring
                 solutions are tailored and meaningful.
               </p>
             </div>
 
-            {/* Open & Transparent */}
+            {/* Collaboration & Transparency */}
             <div
               className="p-6 bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 text-center"
               data-aos="zoom-in"
             >
-              <div className="w-8 h-8 mx-auto mb-4 rounded-lg bg-[#dfbfff] flex items-center justify-center">
-                <Heart size={20} className="text-[#8c3edb]" />
+              <div className="w-8 h-8 mx-auto mb-4 rounded-lg bg-[#dfbfff] dark:bg-[#3d1961] flex items-center justify-center">
+                <Heart size={20} className="text-[#8c3edb] dark:text-[#c48dff]" />
               </div>
-              <h3 className="font-semibold mb-2">
+              <h3 className="font-semibold mb-2 text-gray-900 dark:text-white">
                 Collaboration & Transparency
               </h3>
               <p className="text-gray-600 dark:text-gray-400 text-xs">
@@ -221,10 +232,10 @@ export default function AboutSection() {
               className="p-6 bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 text-center"
               data-aos="zoom-in"
             >
-              <div className="w-8 h-8 mx-auto mb-4 rounded-lg bg-[#dfbfff] flex items-center justify-center">
-                <Award size={20} className="text-[#8c3edb]" />
+              <div className="w-8 h-8 mx-auto mb-4 rounded-lg bg-[#dfbfff] dark:bg-[#3d1961] flex items-center justify-center">
+                <Award size={20} className="text-[#8c3edb] dark:text-[#c48dff]" />
               </div>
-              <h3 className="font-semibold mb-2">Excellence & Integrity</h3>
+              <h3 className="font-semibold mb-2 text-gray-900 dark:text-white">Excellence & Integrity</h3>
               <p className="text-gray-600 dark:text-gray-400 text-xs">
                 We commit to high-quality results while upholding honesty,
                 responsibility, and professionalism in every step.
@@ -232,7 +243,8 @@ export default function AboutSection() {
             </div>
           </div>
         </div>
-        {/*  */}
+
+        {/* Meet Our Team */}
         <h2
           className="text-3xl font-bold mt-14 text-gray-900 dark:text-white"
           data-aos="fade-down"
@@ -266,7 +278,8 @@ export default function AboutSection() {
                 <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
                   {member.name}
                 </h3>
-                <p className="text-[#602c94] font-medium text-sm">
+                {/* 🔹 Warna ungu di role disesuaikan agar bisa dibaca di background dark */}
+                <p className="text-[#602c94] dark:text-[#c48dff] font-medium text-sm">
                   {member.role}
                 </p>
                 <p className="mt-2 text-xs text-gray-600 dark:text-gray-400 text-center">
@@ -291,7 +304,7 @@ export default function AboutSection() {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <FaLinkedin className="w-5 h-5 transition-colors hover:text-blue-600" />
+                      <FaLinkedin className="w-5 h-5 transition-colors hover:text-blue-600 dark:hover:text-blue-400" />
                     </a>
                   )}
 
@@ -301,7 +314,8 @@ export default function AboutSection() {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <FaLink className="w-5 h-5 transition-colors hover:text-[#602c94]" />
+                      {/* 🔹 Hover warna link di-adjust untuk dark mode */}
+                      <FaLink className="w-5 h-5 transition-colors hover:text-[#602c94] dark:hover:text-[#c48dff]" />
                     </a>
                   )}
                 </div>
